@@ -107,7 +107,7 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`購入ボタンを押してNFTをミントしてください。`);
+  const [feedback, setFeedback] = useState(`購入ボタンを押してNFTをミントしてみよう！`);
   const [mintAmount, setMintAmount] = useState(1);
   const [allowlistUserAmountData, setAllowlistUserAmountData] = useState(0);
   const [CONFIG, SET_CONFIG] = useState({
@@ -164,7 +164,7 @@ function App() {
 
     console.log("Cost: ", totalCostWei);
     console.log("Gas limit: ", totalGasLimit);
-    setFeedback(` ${CONFIG.NFT_NAME} をミントしています。しばらくお待ちください。`);
+    setFeedback(` ${CONFIG.NFT_NAME} をミント中です。`);
     setClaimingNft(true);
     blockchain.smartContract.methods
       .mint(mintAmount,allowlistMaxMintAmount,hexProof,mintAmount)
@@ -182,7 +182,7 @@ function App() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `${CONFIG.NFT_NAME}がミントできました! Opensea.io で確認してみましょう。`
+          `${CONFIG.NFT_NAME}がミントできました!`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -426,28 +426,28 @@ function App() {
 
 {
     data.loading == true
-    ? "読み込み中です。しばらくお待ちください。"
+    ? "ただいま読み込み中です。"
     : data.paused == false
         //in operation
         ? data.onlyAllowlisted == true
             //allowlist mint
             ? allowlistUserAmountData == 0 
                 //not allow list user
-                ? "接続したウォレットはアローリストに登録されていません。"
+                ? "接続中のウォレットはAllow Listに登録されていません。"
                 //allow list user 
                 : data.mintCount == true
                     //with count
                     ? 0 < allowlistUserAmountData - data.userMintedAmount
-                        ? feedback + "あと" + ( allowlistUserAmountData - data.userMintedAmount ) + "枚ミントできます。"
-                        : "あなたのアローリストのミントの上限に達しました。"
+                        ? feedback + "あと" + ( allowlistUserAmountData - data.userMintedAmount ) + "枚ミントすることできます。"
+                        : "あなたのAllow Listはミント上限に達しました。"
                     //unlimited mint
                     : feedback
             //public mint
             : data.mintCount == true
                 //with count
                 ? 0 < data.publicSaleMaxMintAmountPerAddress - data.userMintedAmount
-                    ? feedback + "あと" + ( data.publicSaleMaxMintAmountPerAddress - data.userMintedAmount ) + "枚ミントできます。"
-                    : "ミントの上限に達しました。"
+                    ? feedback + "あと" + ( data.publicSaleMaxMintAmountPerAddress - data.userMintedAmount ) + "枚ミントすることができます。"
+                    : "ミント上限に達しました。"
                 //unlimited mint
                 : feedback
         //stop
@@ -455,16 +455,16 @@ function App() {
             //allow mint
             ? allowlistUserAmountData == 0
                 //not allow list user
-                ? "現在ミントは停止中です。接続したウォレットはアローリストに登録されていません。" 
+                ? "ただいまミント停止中です。接続中のウォレットはAllow Listに登録されていません。" 
                 //allow list user
                 : data.mintCount == true
                     //with mint count
                     ? 0 < allowlistUserAmountData - data.userMintedAmount
-                        ? "現在ミントは停止中です。接続したウォレットはホワイトリストに登録されていて、あと" + ( allowlistUserAmountData - data.userMintedAmount ) + "枚ミントできます。"
-                        : "現在ミントは停止中です。ミントの上限に達しました。"
+                        ? "ただいまミント停止中です。接続中のウォレットはAllow Listに登録されており、" + ( allowlistUserAmountData - data.userMintedAmount ) + "枚ミントできます。"
+                        : "ただいまミント停止中です。ミント上限に達しました。"
                     //unlimited mint
-                    : "現在ミントは停止中です。"
-            : "現在ミントは停止中です。"
+                    : "ただいまミント停止中です。"
+            : "ただいまミント停止中です。"
         
 }
 
