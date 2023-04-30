@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0x181F50439b1CCf6f85B62cBce1Ea7923477eD166",
-  "SCAN_LINK": "https://goerli.etherscan.io/token/0x5002615D9d87fd8B9195a7ca8e227a4C280B4731",
+  "CONTRACT_ADDRESS": "0x077eAF8f16665bFc4E6d3f33e3A563569631cbc6",
+  "SCAN_LINK": "https://goerli.etherscan.io/token/0x077eAF8f16665bFc4E6d3f33e3A563569631cbc6",
   "NETWORK": {
-    "NAME": "Mumbai",
-    "SYMBOL": "MATIC",
-    "ID": 80001
+    "NAME": "Goerli",
+    "SYMBOL": "ETH",
+    "ID": 5
   },
   "NFT_NAME": "Maji Mechakucha Mahou Syojo",
   "SYMBOL": "MMMS",
   "MAX_SUPPLY": 5000,
-  "WEI_COST": 0,
-  "DISPLAY_COST": 0,
-  "GAS_LIMIT": 285000,
+  "WEI_COST": 8000000000000000,
+  "DISPLAY_COST": 0.008,
+  "GAS_LIMIT": 28500,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://opensea.io/collection/tereqn",
+  "MARKETPLACE_LINK": "https://opensea.io/collection/example.com",
   "SHOW_BACKGROUND": true
 }

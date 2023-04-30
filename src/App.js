@@ -306,13 +306,14 @@ function App() {
         flex={1}
         ai={"center"}
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
-        image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+        image={CONFIG.SHOW_BACKGROUND ? "../1x/bg.png" : null}
+        // image={ src="../1x/bg.png" }
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+        {/* <StyledLogo alt={"logo"} src={"/config/images/logo.png"} /> */}
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/left.png"} />
+            {/* <StyledImg alt={"example"} src={"/config/images/left.png"} /> */}
           </s.Container>
           <s.SpacerLarge />
           <s.Container
@@ -622,10 +623,10 @@ function App() {
 
           <s.SpacerLarge />
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg
+            {/* <StyledImg
               alt={"example"}
               src={"/config/images/right.png"}
-            />
+            /> */}
           </s.Container>
         </ResponsiveWrapper>
         <s.SpacerMedium />

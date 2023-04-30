@@ -5,8 +5,8 @@ import shutil
 contractAddress = "0x181F50439b1CCf6f85B62cBce1Ea7923477eD166"
 
 #chainSelect = "Ethereum"
-#chainSelect = "Goerli"
-chainSelect = "Polygon"
+chainSelect = "Goerli"
+#chainSelect = "Polygon"
 
 NFTName = "Maji Mechakucha Mahou Syojo"
 symbol = "MMMS"
