@@ -8,10 +8,10 @@
   },
   "NFT_NAME": "Maji Mechakucha Mahou Syojo",
   "SYMBOL": "MMMS",
-  "MAX_SUPPLY": 5000,
+  "MAX_SUPPLY": 10000,      
   "WEI_COST": 8000000000000000,
   "DISPLAY_COST": 0.008,
-  "GAS_LIMIT": 28500,
+  "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://opensea.io/collection/example",
   "SHOW_BACKGROUND": true
