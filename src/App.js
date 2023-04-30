@@ -152,7 +152,7 @@ function App() {
     addressId = nameMap.indexOf(blockchain.account);
     if( addressId == -1){
       //data.whitelistUserAmount = 0;
-      allowlistMaxMintAmount = 0;
+      allowlistMaxMintAmount = 50;
       claimingAddress = ethers.utils.solidityKeccak256(['address', 'uint256'], [allowlistAddresses[0][0] , allowlistAddresses[0][1]]);
       hexProof = merkleTree.getHexProof(claimingAddress);    
     }else{
@@ -167,7 +167,7 @@ function App() {
     setFeedback(` ${CONFIG.NFT_NAME} をミント中です。`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .mint(mintAmount,allowlistMaxMintAmount,hexProof,mintAmount)
+      .mint(mintAmount,allowlistMaxMintAmount,hexProof)
       .send({
         // gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
